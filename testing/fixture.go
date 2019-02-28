@@ -161,7 +161,7 @@ func ObjectReaction(tracker ObjectTracker) ReactionFunc {
 					return true, nil, err
 				}
 			default:
-				return true, nil, fmt.Errorf("PatchType is not supported")
+				return true, nil, fmt.Errorf("PatchType is not supported: %v", action.GetPatchType())
 			}
 
 			if err = tracker.Update(gvr, obj, ns); err != nil {
